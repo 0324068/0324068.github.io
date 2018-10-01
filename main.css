@@ -1,0 +1,80 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    position: relative;
+}
+.header{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 40px;
+    background-color: rgba(36, 36, 36, 0.15);
+}
+.logo{
+    position: absolute;
+    top: -2px;
+    left: 15px;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: italic;
+    font-size: 40px;
+    color: aliceblue;
+}
+.topnav{
+    position: relative;;  
+}
+.topnav ul{
+    position: absolute;
+    right: 0;
+    margin: 10px; 
+    cursor: pointer; 
+}
+.topnav ul li{
+    margin: 10px; 
+    color: white;
+    font-family: "標楷體";
+    font-size: 18px;
+    display: inline;
+}   
+.topnav ul li:hover{
+
+    text-shadow: 1px 1px 1px rgb(129, 129, 129);
+}
+.rightnav{
+    position:fixed;
+    top: 50%;
+    right: 0;
+    
+}
+.rightnav li{
+    width: 5px;
+    height: 5px;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 50px;
+    list-style-type: none;
+    margin: 10px;
+}
+
+.img{
+    background-size: cover;
+    height: 100vh;
+}
+.img.p1,.img.p3,.img.p5{
+    background: linear-gradient(rgb(0, 195, 255),rgba(0, 217, 255, 0.815));
+} 
+.img.p2,.img.p4{
+    background: linear-gradient(rgba(0, 217, 255, 0.815),rgb(0, 195, 255));
+} 
+
+
+
+
+.content{
+    padding: 20px;
+}
+.footer{
+    height: 30px;
+    background-color: aqua;
+}
