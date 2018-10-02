@@ -24,20 +24,21 @@
         </div>   
         <nav class=rightnav>
             <ul>
-                <li data-page=1 style="background-color: black;border-color:black"></li>
+                <li data-page=1 style="background-color: rgb(39, 221, 245);border-color:rgb(39, 221, 245)"></li>
                 <li data-page=2></li>
                 <li data-page=3></li>
                 <li data-page=4></li>
                 <li data-page=5></li>
             </ul>
         </nav>
-        <div class="img p1">
-            <div class="content" style="position: absolute;top: 100px;left: 100px;"><a href="work/todolist.html">123</a></div> 
+        <div class="page p1">
+                <div class="welcome">Hey!<br>I'm Alan</div>
+                <div class="next"><div class="n l"></div><div class="n r"></div></div>               
         </div>
-        <div class="img p2"></div>
-        <div class="img p3"></div>
-        <div class="img p4"></div>
-        <div class="img p5"></div>
+        <div class="page p2"></div>
+        <div class="page p3"></div>
+        <div class="page p4"></div>
+        <div class="page p5"></div>
     </div>
             
 </body>
@@ -71,9 +72,15 @@
                     console.log(".rightnav li:eq("+num+")");
                     let target=".rightnav li:eq("+num+")";
                     $('.rightnav li').css({'background-color':'white','border-color':'white'});
-                    $(target).css({'background-color':'black','border-color':'black'});
+                    $(target).css({'background-color':'rgb(39, 221, 245)','border-color':'rgb(39, 221, 245)'});
                 }
             })
+        $('.next').hover(function(){
+            $(this).find('.n').toggleClass('hover');
+        });
+        $('.next').click(function(){
+            $('html, body').animate({scrollTop:$(".p2").offset().top});
+        })   
     })
 </script>
 </html>
