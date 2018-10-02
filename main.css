@@ -41,7 +41,7 @@
 }   
 .topnav ul li:hover{
 
-    text-shadow: 1px 1px 1px rgb(129, 129, 129);
+    text-shadow:  1px 3px 3px rgb(250, 233, 233);
 }
 .rightnav{
     position:fixed;
