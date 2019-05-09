@@ -1,0 +1,20 @@
+@import "compass";
+
+@mixin border($px,$soild,$color,$radius) {
+    border: $px $soild $color;
+    border-radius: $radius;
+}
+@mixin layout($display,$width,$height) {
+    display:$display;
+    width: $width;
+    height:$height; 
+}
+
+@mixin position ($position,$top,$right,$bottom,$left){
+    position: $position;
+    top:$top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+    

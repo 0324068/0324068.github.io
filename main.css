@@ -64,14 +64,11 @@
     height: 100vh;
     background-color: rgba(31, 32, 32, 0.89);
     position: relative;
-}
-.page.p1,.page.p3,.page.p5{
     text-align: center;
     background:-webkit-radial-gradient(ellipse,rgb(122, 121, 121),black);
-} 
-.page.p2,.page.p4{
-    background: linear-gradient(rgba(0, 217, 255, 0.815),rgb(0, 195, 255));
-} 
+}
+
+
 .welcome{
     position: relative  ;
     top:20%;
@@ -91,6 +88,7 @@
     bottom: 60px;
    
 }
+
 .n{
     height: 2px;
     width: 16px;

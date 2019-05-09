@@ -1,0 +1,319 @@
+/* line 19, ../sass/style.scss */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 23, ../sass/style.scss */
+.container {
+  position: relative;
+}
+/* line 25, ../sass/style.scss */
+.container .header {
+  position: fixed;
+  top: 0;
+  right: "";
+  bottom: "";
+  left: "";
+  display: "";
+  width: 100%;
+  height: 40px;
+  background-color: black;
+  text-align: center;
+  z-index: 1;
+}
+/* line 32, ../sass/style.scss */
+.container .topnav {
+  position: relative;
+}
+/* line 34, ../sass/style.scss */
+.container .topnav .logo {
+  position: absolute;
+  top: -13px;
+  right: "";
+  bottom: "";
+  left: 15px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: 40px;
+  color: white;
+  z-index: 2;
+}
+/* line 42, ../sass/style.scss */
+.container .topnav .logo:hover {
+  color: aqua;
+}
+/* line 45, ../sass/style.scss */
+.container .topnav ul {
+  position: relative;
+  margin: 10px;
+  cursor: pointer;
+}
+/* line 49, ../sass/style.scss */
+.container .topnav ul li {
+  margin: 10px;
+  color: white;
+  font-size: 18px;
+  display: inline;
+}
+/* line 55, ../sass/style.scss */
+.container .topnav ul li:hover {
+  text-shadow: 1px 3px 3px #fae9e9;
+}
+/* line 60, ../sass/style.scss */
+.container .rightnav {
+  position: fixed;
+  top: 50%;
+  right: 0px;
+  bottom: "";
+  left: "";
+  z-index: 1;
+}
+/* line 63, ../sass/style.scss */
+.container .rightnav li {
+  display: "";
+  width: 5px;
+  height: 5px;
+  border: 1px solid white;
+  border-radius: 50px;
+  background-color: white;
+  list-style-type: none;
+  margin: 10px;
+}
+
+/* line 72, ../sass/style.scss */
+.p1 {
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(31, 32, 32, 0.89);
+  position: relative;
+  text-align: center;
+  background: #151515;
+}
+/* line 74, ../sass/style.scss */
+.p1 .welcome {
+  position: relative;
+  top: 20%;
+  right: "";
+  bottom: "";
+  left: "";
+  color: aqua;
+  font-size: 7rem;
+  font-style: italic;
+}
+/* line 79, ../sass/style.scss */
+.p1 .welcome .slide-top {
+  position: absolute;
+  top: 50px;
+  right: "";
+  bottom: "";
+  left: calc(50vw - 109px);
+  width: 218px;
+  overflow: hidden;
+}
+/* line 83, ../sass/style.scss */
+.p1 .welcome .slide-top span {
+  position: relative;
+  top: "";
+  right: "";
+  bottom: "";
+  left: 0px;
+  margin-right: 50px;
+  width: 218px;
+}
+/* line 89, ../sass/style.scss */
+.p1 .welcome .slide-left {
+  position: absolute;
+  top: 200px;
+  right: "";
+  bottom: "";
+  left: calc(50vw - 180px);
+  width: 142.2px;
+  overflow: hidden;
+}
+/* line 93, ../sass/style.scss */
+.p1 .welcome .slide-left span {
+  position: relative;
+  margin-right: 20px;
+  width: 142.2px;
+  left: 0px;
+}
+/* line 100, ../sass/style.scss */
+.p1 .welcome .slide-right {
+  position: absolute;
+  top: 200px;
+  right: "";
+  bottom: "";
+  left: calc(50vw - 30px);
+  width: 211.5px;
+  overflow: hidden;
+}
+/* line 104, ../sass/style.scss */
+.p1 .welcome .slide-right span {
+  position: relative;
+  margin-right: 20px;
+  width: 211.5px;
+  left: 0px;
+}
+/* line 112, ../sass/style.scss */
+.p1 .next {
+  position: absolute;
+  top: "";
+  right: "";
+  bottom: 60px;
+  left: 50%;
+  display: "";
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: 80%;
+  background-color: rgba(0, 0, 0, 0.75);
+  transform: translateX(-50%);
+}
+/* line 118, ../sass/style.scss */
+.p1 .next .n1 {
+  display: "";
+  width: 16px;
+  height: 2px;
+  border: 1px solid rgba(0, 255, 255, 0);
+  border-radius: 20px;
+  position: absolute;
+  background-color: aqua;
+  position: "";
+  top: 22px;
+  right: "";
+  bottom: "";
+  left: -2px;
+  transform-origin: right;
+  transform: rotate(45deg);
+}
+/* line 124, ../sass/style.scss */
+.p1 .next .n2 {
+  display: "";
+  width: 16px;
+  height: 2px;
+  border: 1px solid rgba(0, 255, 255, 0);
+  border-radius: 20px;
+  position: absolute;
+  background-color: aqua;
+  position: "";
+  top: 9px;
+  right: "";
+  bottom: "";
+  left: 26px;
+  transform-origin: left;
+  transform: rotate(135deg);
+}
+/* line 131, ../sass/style.scss */
+.p1 .next:hover {
+  -webkit-animation: myAnimation 0.8s linear 0s infinite alternate;
+}
+@-webkit-keyframes myAnimation {
+  0% {
+    bottom: 65px;
+  }
+  50% {
+    bottom: 55px;
+  }
+  100% {
+    bottom: 65px;
+  }
+}
+/* line 141, ../sass/style.scss */
+.p2 {
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(31, 32, 32, 0.89);
+  position: relative;
+  text-align: center;
+  background: #151515;
+  text-align: center;
+  color: white;
+}
+/* line 145, ../sass/style.scss */
+.p2 .content {
+  display: block;
+  width: 60%;
+  height: "";
+  position: relative;
+  top: 180px;
+  right: "";
+  bottom: "";
+  left: "";
+  border: 2px solid aqua;
+  border-radius: 10px;
+  margin: 0px auto;
+}
+/* line 150, ../sass/style.scss */
+.p2 .content p {
+  text-align: left;
+  line-height: 24px;
+  letter-spacing: 3px;
+  padding: 10px;
+}
+/* line 157, ../sass/style.scss */
+.p2 .contenttitle {
+  margin: 0px auto;
+  text-align: center;
+  position: relative;
+  top: 195px;
+  right: "";
+  bottom: "";
+  left: "";
+}
+/* line 161, ../sass/style.scss */
+.p2 .contenttitle .title {
+  margin: 0 1px;
+  padding-top: 4px;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  display: inline-block;
+  width: 29.5%;
+  height: 25px;
+}
+/* line 169, ../sass/style.scss */
+.p2 .contentbox {
+  margin: 0px auto;
+  text-align: center;
+  position: relative;
+  top: 200px;
+  right: "";
+  bottom: "";
+  left: "";
+}
+/* line 173, ../sass/style.scss */
+.p2 .contentbox .box {
+  margin: 0 1px;
+  vertical-align: top;
+  border: 2px solid aqua;
+  border-radius: 10px;
+  display: inline-block;
+  width: 29.5%;
+  height: 80px;
+}
+/* line 178, ../sass/style.scss */
+.p2 .contentbox .box ul {
+  margin: 0px auto;
+  width: 80%;
+  padding: 5px 0;
+}
+
+/* line 187, ../sass/style.scss */
+.p3 {
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(31, 32, 32, 0.89);
+  position: relative;
+  text-align: center;
+  background: #151515;
+}
+
+/* line 190, ../sass/style.scss */
+.p4 {
+  background-size: cover;
+  height: 100vh;
+  background-color: rgba(31, 32, 32, 0.89);
+  position: relative;
+  text-align: center;
+  background: #151515;
+}
