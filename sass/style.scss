@@ -1,0 +1,192 @@
+@import "compass/css3";
+@import "./mixin";
+@mixin pages {
+    background-size: cover;
+    height: 100vh;
+    background-color: rgba(31, 32, 32, 0.89);
+    position: relative;
+    text-align: center;
+    background:#151515;
+}
+@mixin nextstyle {
+    @include layout("",16px,2px);
+    @include border(1px,solid,rgba(0, 255, 255, 0),20px);
+    position: absolute;
+    background-color: aqua;
+}
+$main-color:aqua;
+$color-white:white;
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    position: relative;
+    .header{
+    @include position(fixed,0,"","","");
+    @include layout("",100%,40px);
+    background-color: rgb(0, 0, 0);
+    text-align:center;
+    z-index:1;
+    }
+    .topnav{
+        position: relative;
+        .logo{
+            @include position(absolute,-13px,"","",15px);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 40px;
+            color: $color-white;
+            z-index: 2;
+        }
+        .logo:hover{
+            color: $main-color;
+        }
+        ul{
+            position: relative;
+            margin: 10px; 
+            cursor: pointer;
+            li{
+                margin: 10px; 
+                color: $color-white;
+                font-size: 18px;
+                display: inline;
+            }
+            li:hover{
+                text-shadow:  1px 3px 3px rgb(250, 233, 233);
+            }    
+        }
+    }
+    .rightnav{
+        @include position(fixed,50%,0px,"","");
+        z-index:1;
+        li{
+            @include layout("",5px,5px);
+            @include border(1px,solid,$color-white,50px);
+            background-color: $color-white;
+            list-style-type: none;
+            margin: 10px;
+        }
+    }
+}
+.p1{
+    @include pages;
+    .welcome{
+        @include position(relative,20%,"","","");
+        color: $main-color;
+        font-size: 7rem;
+        font-style: italic;
+        .slide-top{
+            @include position(absolute,50px,"","",calc(50vw - 109px));
+            width: 218px;
+            overflow: hidden;
+            span{
+                @include position(relative,"","","",0px);
+                margin-right: 50px;
+                width: 218px;
+            }
+        }
+        .slide-left{
+            @include position(absolute,200px,"","",calc(50vw - 180px));
+            width: 142.2px;
+            overflow: hidden;
+            span{
+                position:relative;
+                margin-right: 20px;
+                width: 142.2px;
+                left: 0px;
+            }
+        }
+        .slide-right{
+            @include position(absolute,200px,"","",calc(50vw - 30px));
+            width: 211.5px;
+            overflow: hidden;
+            span{
+                position:relative;
+                margin-right: 20px;
+                width: 211.5px;
+                left: 0px;
+            }
+        }
+    }    
+    .next{
+        @include position(absolute,"","",60px,50%);
+        @include layout("",30px,30px);
+        @include border(1px,solid,rgba(0, 0, 0, 0),80%);
+        background-color: rgba(0, 0, 0, 0.75);
+        transform: translateX(-50%);
+        .n1{
+            @include nextstyle;
+            @include position("",22px,"","",-2px);
+            transform-origin:right;
+            transform: rotate(45deg);
+        }
+        .n2{
+            @include nextstyle;
+            @include position("",9px,"","",26px);
+            transform-origin:left;
+            transform: rotate(135deg);
+        }
+    }
+    .next:hover{
+        -webkit-animation: myAnimation 0.8s linear 0s infinite alternate;
+    }
+    @-webkit-keyframes myAnimation
+    {
+        0% { bottom: 65px; }
+        50% { bottom: 55px; }
+      100% { bottom: 65px;}
+    }
+}
+.p2{
+    @include pages;
+    text-align:center;
+    color:$color-white;
+    .content{
+        @include layout(block,60%,"");
+        @include position(relative,180px,"","","");
+        @include border(2px,solid,$main-color,10px);
+        margin:0px auto;
+        p{
+            text-align: left;
+            line-height: 24px;
+            letter-spacing: 3px;
+            padding: 10px;
+        }
+    }
+    .contenttitle{
+        margin: 0px auto;
+        text-align: center;
+        @include position(relative,195px,"","","");
+        .title{
+            margin: 0 1px;
+            padding-top: 4px;
+            @include border(2px,solid,$main-color,10px);
+            @include layout(inline-block,29.5%,25px);
+        }
+        
+    }
+    .contentbox{
+        margin: 0px auto;
+        text-align: center;
+        @include position(relative,200px,"","","");
+        .box{
+            margin: 0 1px;
+            vertical-align: top;
+            @include border(2px,solid,$main-color,10px);
+            @include layout(inline-block,29.5%,80px);
+            ul{
+                margin: 0px auto;
+                width:80%;
+                padding: 5px 0;
+            }
+        }
+        
+    }
+}
+.p3{
+    @include pages;
+}
+.p4{
+    @include pages;
+}
