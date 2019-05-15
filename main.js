@@ -51,10 +51,14 @@ $(document).ready(function(){
         $(target).find("span").animate({left:width},"slow");
     }
     };
+<<<<<<< HEAD
     $(".box .icon:eq(1)").click(()=>{
         $(".QRcode").css({'display':'block'})
     })
     $(".QRcode").click(()=>{
         $(".QRcode").css({'display':'none'})
     })
+=======
+     
+>>>>>>> ddc03710c826542fd99469e1abdfd9d15d796f59
 })
