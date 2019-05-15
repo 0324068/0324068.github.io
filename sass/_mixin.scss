@@ -1,7 +1,7 @@
 @import "compass";
 
-@mixin border($px,$soild,$color,$radius) {
-    border: $px $soild $color;
+@mixin border($px,$solid,$color,$radius) {
+    border: $px $solid $color;
     border-radius: $radius;
 }
 @mixin layout($display,$width,$height) {

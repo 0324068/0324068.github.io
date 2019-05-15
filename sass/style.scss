@@ -20,43 +20,103 @@ $color-white:white;
     padding: 0;
     margin: 0;
 }
-.container{
-    position: relative;
-    .header{
-    @include position(fixed,0,"","","");
-    @include layout("",100%,40px);
-    background-color: rgb(0, 0, 0);
-    text-align:center;
-    z-index:1;
-    }
-    .topnav{
+//Desktop
+@media screen and (min-width: 1200px) {
+    .container{
         position: relative;
-        .logo{
-            @include position(absolute,-13px,"","",15px);
-            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-            font-style: italic;
-            font-size: 40px;
-            color: $color-white;
-            z-index: 2;
+        .header{
+        @include position(fixed,0,"","","");
+        @include layout("",100%,40px);
+        background-color: rgb(0, 0, 0);
+        text-align:center;
+        z-index:1;
         }
-        .logo:hover{
-            color: $main-color;
-        }
-        ul{
+        .topnav{
             position: relative;
-            margin: 10px; 
-            cursor: pointer;
-            li{
-                margin: 10px; 
+            .logo{
+                @include position(absolute,-13px,"","",15px);
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-style: italic;
+                font-size: 40px;
                 color: $color-white;
-                font-size: 18px;
-                display: inline;
+                z-index: 2;
             }
-            li:hover{
-                text-shadow:  1px 3px 3px rgb(250, 233, 233);
-            }    
+            .logo:hover{
+                color: $main-color;
+            }
+            ul{
+                position: relative;
+                margin: 10px; 
+                cursor: pointer;
+                li{
+                    margin: 10px; 
+                    color: $color-white;
+                    font-size: 18px;
+                    display: inline;
+                }
+                li:hover{
+                    text-shadow:  1px 3px 3px rgb(250, 233, 233);
+                }    
+            }
         }
     }
+};
+//ipad horizontal
+@media screen and (min-width: 1024px) and (max-width: 1200px){
+    
+}; 
+//ipad vertical
+@media screen and (min-width: 768px) and (max-width: 900px)and (min-height: 1000px) {
+    
+}; 
+//i6.7.8.plus.x horizontal
+@media screen and (min-width: 640px) and (max-width: 812px)and (max-height: 414px) {
+    
+} 
+//i6.7.8.plus.x vertical
+@media screen and (min-width: 360px) and (max-width: 440px) {
+    .container{
+        position: relative;
+        .header{
+        @include position(fixed,0,"","","");
+        @include layout("",100%,40px);
+        background-color: rgb(0, 0, 0);
+        text-align:center;
+        z-index:1;
+        }
+        .topnav{
+            position: relative;
+            .logo{
+                @include position(absolute,-13px,"","",15px);
+                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                font-style: italic;
+                font-size: 40px;
+                color: $color-white;
+                z-index: 2;
+            }
+            .logo:hover{
+                color: $main-color;
+            }
+            ul{
+                position: relative;
+                margin:10px 0;
+                width:100vw; 
+                text-align: right;
+                cursor: pointer;
+                li{
+                    margin: 4px; 
+                    color: $color-white;
+                    font-size: 18px;
+                    display: inline;
+                }
+                li:hover{
+                    text-shadow:  1px 3px 3px rgb(250, 233, 233);
+                }    
+            }
+        }
+    }
+}  
+.container{
     .rightnav{
         @include position(fixed,50%,0px,"","");
         z-index:1;
@@ -186,7 +246,48 @@ $color-white:white;
 }
 .p3{
     @include pages;
+    .project{
+        @include position(relative,calc(50vh - 200px),"","","");
+        @include border(2px,solid,$main-color,20px);
+        @include layout(inline-block,450px,"");
+        img{
+            max-width: 450px;
+            max-height: 450px;
+            border-radius: 20px; 
+        }
+        span{
+            color: $color-white;
+        }
+    }
 }
 .p4{
     @include pages;
+    .box{
+        @include position(relative,calc(50vh - 50px),"","","");
+        .icon{
+            @include layout(inline-block,100px,100px);
+            
+            margin: 0 100px;
+            img{
+                max-width: 100px;
+                max-height: 100px;
+                border-radius: 20px;
+                transition: all 0.6s;
+            }
+            img:hover {
+                transform: scale(1.4);
+            }
+        }
+    }
+    .QRcode{
+        @include layout(inline-block,225px,225px);
+        @include position(relative,calc(50vh - 225px),"","","");
+        display: none;
+        margin: 0 auto;
+        img{
+            border-radius: 20px;
+            transition: all 0.6s;
+        }
+    }
+    
 }
