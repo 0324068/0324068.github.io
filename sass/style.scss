@@ -24,51 +24,112 @@ $color-white:white;
 //Desktop
 @media screen and (min-width: 1200px) {
     .container{
-        position: relative;
-        .header{
-        @include position(fixed,0,"","","");
-        @include layout("",100vw,40px);
-        background-color: rgb(0, 0, 0);
-        text-align:center;
-        z-index:1;
-        }
         .topnav{
-            position: relative;
-            .logo{
-                @include position(absolute,-13px,"","",15px);
-                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-style: italic;
-                font-size: 40px;
-                color: $color-white;
-                z-index: 2;
-            }
-            .logo:hover{
-                color: $main-color;
-            }
             ul{
-                position: relative;
-                margin: 10px; 
-                cursor: pointer;
                 li{
-                    margin: 10px; 
-                    color: $color-white;
-                    font-size: 18px;
-                    display: inline;
+                    margin: 20px; 
+                } 
+            }
+        }
+        .p1{
+            .welcome{
+                @include position(relative,20%,"","","");
+            }
+        }
+        .p2{
+            .contentbox{
+                @include position(relative,30vh,"","","");
+                .content{
+                    @include layout(block,60%,"");
                 }
-                li:hover{
-                    text-shadow:  1px 3px 3px rgb(250, 233, 233);
-                }    
+            }   
+        }
+        .p3{
+            .project{
+                @include layout(inline-block,40vw,"");
+                img{
+                    max-width:40vw;
+                    max-height:40vw;
+                }
+            }
+        }
+        .p4{
+            .box{
+                @include position(relative,220px,"","","");
+                .icon{
+                    @include layout(inline-block,150px,150px);
+                    margin:50px;
+                    img{
+                        min-width: 150px;
+                        min-height: 150px;
+                    }
+                }
+            }
+            .QRcode{
+                @include position(absolute,10px,"","",calc(50vw - 112px));
             }
         }
     }
 };
-//ipad horizontal
-@media screen and (min-width: 1024px) and (max-width: 1200px){
-    
-}; 
-//ipad vertical
-@media screen and (min-width: 768px) and (max-width: 900px)and (min-height: 1000px) {
-    
+
+//ipad 
+@media screen and (min-width: 768px) and (max-width: 1200px)and (min-height: 500px) {
+    .container{
+        .topnav{
+            ul{
+                text-align: center;
+                li{
+                    margin: 10px; 
+                } 
+            }
+        }
+        .p1{
+            .welcome{
+                @include position(relative,20%,"","","");
+            }
+        }
+        .p2{
+            .contentbox{
+                @include position(relative,25vh,"","","");
+                .content{
+                    @include position(relative,0px,"","","");   
+                    @include layout(block,70%,"");
+                }
+                .contenttitle{
+                    @include position(relative,15px,"","","");
+                }
+                .contenttext{
+                    @include position(relative,20px,"","","");
+                }
+            } 
+        }
+        .p3{
+            .project{
+                @include layout(inline-block,60vw,"");
+                
+                img{
+                    max-width:60vw;
+                    max-height: 60vw;
+                }
+            }
+        }
+        .p4{
+            .box{
+                @include position(relative,35vh,"","","");
+                .icon{
+                    @include layout(inline-block,120px,120px);
+                    margin:40px;
+                    img{
+                        min-width: 120px;
+                        min-height: 120px;
+                    }
+                }
+            }
+            .QRcode{
+                @include position(absolute,0px,"","",calc(50vw - 112px));
+            }
+        }
+    }
 }; 
 //i6.7.8.plus.x horizontal
 @media screen and (min-width: 640px) and (max-width: 812px)and (max-height: 414px) {
@@ -112,11 +173,11 @@ $color-white:white;
                 @include position(relative,100px,"","","");
                 .icon{
                     @include layout(inline-block,100px,100px);
-                    margin:30px;
+                    margin:40px;
                 }
             }
             .QRcode{
-                @include position(absolute,calc(10vh + 20px),"","",calc(50vw - 112px));
+                @include position(absolute,0px,"","",calc(50vw - 112px));
             }
         }
     }
@@ -142,14 +203,7 @@ $color-white:white;
             .contentbox{
                 @include position(relative,10vh,"","","");
                 .content{
-                    @include position(relative,0px,"","","");   
                     @include layout(block,70%,"");
-                }
-                .contenttitle{
-                    @include position(relative,15px,"","","");
-                }
-                .contenttext{
-                    @include position(relative,20px,"","","");
                 }
             } 
         }
@@ -205,8 +259,7 @@ $color-white:white;
             margin:10px 0;
             width:100vw;
             cursor: pointer;
-            li{
-                // margin: 10px; 
+            li{ 
                 color: $color-white;
                 font-size: 18px;
                 display: inline;
@@ -300,8 +353,7 @@ $color-white:white;
         color:$color-white;
         .contentbox{
             .content{
-                //@include layout(block,60%,"");
-                //@include position(relative,180px,"","","");
+                @include position(relative,0px,"","","");  
                 @include border(2px,solid,$main-color,10px);
                 margin:0px auto;
                 p{
@@ -314,7 +366,7 @@ $color-white:white;
             .contenttitle{
                 margin: 0px auto;
                 text-align: center;
-                //@include position(relative,195px,"","","");
+                @include position(relative,15px,"","","");
                 .title{
                     margin: 0 1px;
                     padding-top: 4px;
@@ -326,7 +378,7 @@ $color-white:white;
             .contenttext{
                 margin: 0px auto;
                 text-align: center;
-                //@include position(relative,200px,"","","");
+                @include position(relative,20px,"","","");
                 .box{
                     margin: 0 1px;
                     vertical-align: top;
@@ -349,10 +401,7 @@ $color-white:white;
             @include position(relative,calc(50vh - 200px),"","","");
             @include border(2px,solid,$main-color,20px);
             cursor: pointer;
-           // @include layout(inline-block,450px,"");
             img{
-              //  max-width: 450px;
-              //  max-height: 450px;
                 border-radius: 20px; 
             }
             span{
@@ -363,11 +412,7 @@ $color-white:white;
     .p4{
         @include pages;
         .box{
-           // @include position(relative,calc(50vh - 50px),"","","");
             .icon{
-           //    @include layout(inline-block,100px,100px);
-                
-           //     margin: 0 100px;
                 img{
                     max-width: 100px;
                     max-height: 100px;
