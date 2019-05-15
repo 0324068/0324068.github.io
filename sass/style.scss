@@ -72,57 +72,108 @@ $color-white:white;
 }; 
 //i6.7.8.plus.x horizontal
 @media screen and (min-width: 640px) and (max-width: 812px)and (max-height: 414px) {
-    
+    .container{
+        .topnav{
+            ul{
+                text-align: center;
+                li{
+                    margin: 10px; 
+                } 
+            }
+        }
+        .p2{
+            min-height: 120vh;
+            .contentbox{
+                @include position(relative,15vh,"","","");
+                .content{
+                    @include position(relative,0px,"","","");   
+                    @include layout(block,70%,"");
+                }
+                .contenttitle{
+                    @include position(relative,15px,"","","");
+                }
+                .contenttext{
+                    @include position(relative,20px,"","","");
+                }
+            } 
+        }
+        .p3{
+            .project{
+                @include layout(inline-block,50vw,"");
+                margin-top: 80px;
+                img{
+                    max-width:50vw;
+                    max-height: 50vw;
+                }
+            }
+        }
+        .p4{
+            .box{
+                @include position(relative,100px,"","","");
+                .icon{
+                    @include layout(inline-block,100px,100px);
+                    margin:30px;
+                }
+            }
+            .QRcode{
+                @include position(absolute,calc(10vh + 20px),"","",calc(50vw - 112px));
+            }
+        }
+    }
+
 } 
 //i6.7.8.plus.x vertical
 @media screen and (min-width: 360px) and (max-width: 440px) {
     .container{
         .topnav{
             ul{
-                margin:10px 0;
-                width:100vw; 
                 text-align: right;
                 li{
                     margin: 4px; 
                 } 
             }
         }
-    }
-    .p2{
-        .contentbox{
-            @include position(relative,10vh,"","","");
-            .content{
-                @include position(relative,0px,"","","");   
-                @include layout(block,70%,"");
-            }
-            .contenttitle{
-                @include position(relative,15px,"","","");
-            }
-            .contenttext{
-                @include position(relative,20px,"","","");
+        .p1{
+            .welcome{
+                @include position(relative,20%,"","","");
             }
         }
-    }
-    .p3{
-        .project{
-            @include layout(inline-block,85vw,"");
-            img{
-                max-width:85vw;
-                max-height: 85vw;
+        .p2{
+            .contentbox{
+                @include position(relative,10vh,"","","");
+                .content{
+                    @include position(relative,0px,"","","");   
+                    @include layout(block,70%,"");
+                }
+                .contenttitle{
+                    @include position(relative,15px,"","","");
+                }
+                .contenttext{
+                    @include position(relative,20px,"","","");
+                }
+            } 
+        }
+        .p3{
+            .project{
+                @include layout(inline-block,85vw,"");
+                img{
+                    max-width:85vw;
+                    max-height: 85vw;
+                }
             }
         }
-    }
-    .p4{
-        .box{
-            @include position(relative,100px,"","","");
-            .icon{
-                @include layout(block,100px,100px);
-                margin:0  auto;
-                margin-bottom: 10vh;
+        .p4{
+            .box{
+                @include position(relative,100px,"","","");
+                .icon{
+                    @include layout(block,100px,100px);
+                    margin:0  auto;
+                    margin-bottom: 10vh;
+                }
             }
-        }
-        .QRcode{
-            @include position(absolute,calc(10vh + 20px),"","",calc(50vw - 112px));
+            .QRcode{
+                @include position(absolute,calc(10vh + 20px),"","",calc(50vw - 112px));
+            }
         }
     }
 }  
@@ -151,7 +202,8 @@ $color-white:white;
         }
         ul{
             position: relative;
-            // margin: 10px; 
+            margin:10px 0;
+            width:100vw;
             cursor: pointer;
             li{
                 // margin: 10px; 
@@ -169,7 +221,7 @@ $color-white:white;
         @include position(fixed,50%,0px,"","");
         z-index:1;
         li{
-            @include layout("",5px,5px);
+            @include layout(none,5px,5px);
             @include border(1px,solid,$color-white,50px);
             background-color: $color-white;
             list-style-type: none;
@@ -179,7 +231,6 @@ $color-white:white;
     .p1{
         @include pages;
         .welcome{
-            @include position(relative,20%,"","","");
             color: $main-color;
             font-size: 7rem;
             font-style: italic;
@@ -238,9 +289,9 @@ $color-white:white;
         }
         @-webkit-keyframes myAnimation
         {
-            0% { bottom: 85px; }
-            50% { bottom: 75px; }
-        100% { bottom: 85px;}
+            0% { bottom: 10vh; }
+            50% { bottom: calc(10vh - 10px); }
+        100% { bottom: 10vh;}
         }
     }
     .p2{
@@ -297,6 +348,7 @@ $color-white:white;
         .project{
             @include position(relative,calc(50vh - 200px),"","","");
             @include border(2px,solid,$main-color,20px);
+            cursor: pointer;
            // @include layout(inline-block,450px,"");
             img{
               //  max-width: 450px;
