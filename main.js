@@ -55,6 +55,6 @@ $(document).ready(function(){
         $(".QRcode").css({'display':'block'})
     })
     $(".QRcode").click(()=>{
-        $(".QRcode").css({'display':'none'})
+        $(".QRcode").css({'display':'none'}) 
     })
 })

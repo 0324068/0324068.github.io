@@ -2,7 +2,8 @@
 @import "./mixin";
 @mixin pages {
     background-size: cover;
-    height: 100vh;
+    width: 100vw;
+    height:100vh;
     background-color: rgba(31, 32, 32, 0.89);
     position: relative;
     text-align: center;
@@ -26,7 +27,7 @@ $color-white:white;
         position: relative;
         .header{
         @include position(fixed,0,"","","");
-        @include layout("",100%,40px);
+        @include layout("",100vw,40px);
         background-color: rgb(0, 0, 0);
         text-align:center;
         z-index:1;
@@ -76,47 +77,94 @@ $color-white:white;
 //i6.7.8.plus.x vertical
 @media screen and (min-width: 360px) and (max-width: 440px) {
     .container{
-        position: relative;
-        .header{
-        @include position(fixed,0,"","","");
-        @include layout("",100%,40px);
-        background-color: rgb(0, 0, 0);
-        text-align:center;
-        z-index:1;
-        }
         .topnav{
-            position: relative;
-            .logo{
-                @include position(absolute,-13px,"","",15px);
-                font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-                font-style: italic;
-                font-size: 40px;
-                color: $color-white;
-                z-index: 2;
-            }
-            .logo:hover{
-                color: $main-color;
-            }
             ul{
-                position: relative;
                 margin:10px 0;
                 width:100vw; 
                 text-align: right;
-                cursor: pointer;
                 li{
                     margin: 4px; 
-                    color: $color-white;
-                    font-size: 18px;
-                    display: inline;
-                }
-                li:hover{
-                    text-shadow:  1px 3px 3px rgb(250, 233, 233);
-                }    
+                } 
             }
         }
     }
+    .p2{
+        .contentbox{
+            @include position(relative,10vh,"","","");
+            .content{
+                @include position(relative,0px,"","","");   
+                @include layout(block,70%,"");
+            }
+            .contenttitle{
+                @include position(relative,15px,"","","");
+            }
+            .contenttext{
+                @include position(relative,20px,"","","");
+            }
+        }
+    }
+    .p3{
+        .project{
+            @include layout(inline-block,85vw,"");
+            img{
+                max-width:85vw;
+                max-height: 85vw;
+            }
+        }
+    }
+    .p4{
+        .box{
+            @include position(relative,100px,"","","");
+            .icon{
+                @include layout(block,100px,100px);
+                margin:0  auto;
+                margin-bottom: 10vh;
+            }
+        }
+        .QRcode{
+            @include position(absolute,calc(10vh + 20px),"","",calc(50vw - 112px));
+        }
+    }
 }  
+
+
 .container{
+    position: relative;
+    .header{
+    @include position(fixed,0,"","","");
+    background-color: rgb(0, 0, 0);
+    text-align:center;
+    z-index:1;
+    }
+    .topnav{
+        position: relative;
+        .logo{
+            @include position(absolute,-13px,"","",15px);
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-style: italic;
+            font-size: 40px;
+            color: $color-white;
+            z-index: 2;
+        }
+        .logo:hover{
+            color: $main-color;
+        }
+        ul{
+            position: relative;
+            // margin: 10px; 
+            cursor: pointer;
+            li{
+                // margin: 10px; 
+                color: $color-white;
+                font-size: 18px;
+                display: inline;
+            }
+            li:hover{
+                text-shadow:  1px 3px 3px rgb(250, 233, 233);
+                color:$main-color;
+            }    
+        }
+    }
     .rightnav{
         @include position(fixed,50%,0px,"","");
         z-index:1;
@@ -128,166 +176,167 @@ $color-white:white;
             margin: 10px;
         }
     }
-}
-.p1{
-    @include pages;
-    .welcome{
-        @include position(relative,20%,"","","");
-        color: $main-color;
-        font-size: 7rem;
-        font-style: italic;
-        .slide-top{
-            @include position(absolute,50px,"","",calc(50vw - 109px));
-            width: 218px;
-            overflow: hidden;
-            span{
-                @include position(relative,"","","",0px);
-                margin-right: 50px;
+    .p1{
+        @include pages;
+        .welcome{
+            @include position(relative,20%,"","","");
+            color: $main-color;
+            font-size: 7rem;
+            font-style: italic;
+            .slide-top{
+                @include position(absolute,50px,"","",calc(50vw - 109px));
                 width: 218px;
+                overflow: hidden;
+                span{
+                    @include position(relative,"","","",0px);
+                    margin-right: 50px;
+                    width: 218px;
+                }
             }
-        }
-        .slide-left{
-            @include position(absolute,200px,"","",calc(50vw - 180px));
-            width: 142.2px;
-            overflow: hidden;
-            span{
-                position:relative;
-                margin-right: 20px;
+            .slide-left{
+                @include position(absolute,200px,"","",calc(50vw - 180px));
                 width: 142.2px;
-                left: 0px;
+                overflow: hidden;
+                span{
+                    position:relative;
+                    margin-right: 20px;
+                    width: 142.2px;
+                    left: 0px;
+                }
             }
-        }
-        .slide-right{
-            @include position(absolute,200px,"","",calc(50vw - 30px));
-            width: 211.5px;
-            overflow: hidden;
-            span{
-                position:relative;
-                margin-right: 20px;
+            .slide-right{
+                @include position(absolute,200px,"","",calc(50vw - 30px));
                 width: 211.5px;
-                left: 0px;
+                overflow: hidden;
+                span{
+                    position:relative;
+                    margin-right: 20px;
+                    width: 211.5px;
+                    left: 0px;
+                }
+            }
+        }    
+        .next{
+            @include position(absolute,"","","",50%);
+            @include layout("",30px,30px);
+            @include border(1px,solid,rgba(0, 0, 0, 0),80%);
+            background-color: rgba(0, 0, 0, 0.75);
+            transform: translateX(-50%);
+            -webkit-animation: myAnimation 0.8s linear 0s infinite alternate;
+            .n1{
+                @include nextstyle;
+                @include position("",22px,"","",-2px);
+                transform-origin:right;
+                transform: rotate(45deg);
+            }
+            .n2{
+                @include nextstyle;
+                @include position("",9px,"","",26px);
+                transform-origin:left;
+                transform: rotate(135deg);
             }
         }
-    }    
-    .next{
-        @include position(absolute,"","",60px,50%);
-        @include layout("",30px,30px);
-        @include border(1px,solid,rgba(0, 0, 0, 0),80%);
-        background-color: rgba(0, 0, 0, 0.75);
-        transform: translateX(-50%);
-        .n1{
-            @include nextstyle;
-            @include position("",22px,"","",-2px);
-            transform-origin:right;
-            transform: rotate(45deg);
-        }
-        .n2{
-            @include nextstyle;
-            @include position("",9px,"","",26px);
-            transform-origin:left;
-            transform: rotate(135deg);
+        @-webkit-keyframes myAnimation
+        {
+            0% { bottom: 85px; }
+            50% { bottom: 75px; }
+        100% { bottom: 85px;}
         }
     }
-    .next:hover{
-        -webkit-animation: myAnimation 0.8s linear 0s infinite alternate;
-    }
-    @-webkit-keyframes myAnimation
-    {
-        0% { bottom: 65px; }
-        50% { bottom: 55px; }
-      100% { bottom: 65px;}
-    }
-}
-.p2{
-    @include pages;
-    text-align:center;
-    color:$color-white;
-    .content{
-        @include layout(block,60%,"");
-        @include position(relative,180px,"","","");
-        @include border(2px,solid,$main-color,10px);
-        margin:0px auto;
-        p{
-            text-align: left;
-            line-height: 24px;
-            letter-spacing: 3px;
-            padding: 10px;
-        }
-    }
-    .contenttitle{
-        margin: 0px auto;
-        text-align: center;
-        @include position(relative,195px,"","","");
-        .title{
-            margin: 0 1px;
-            padding-top: 4px;
-            @include border(2px,solid,$main-color,10px);
-            @include layout(inline-block,29.5%,25px);
-        }
-        
-    }
-    .contentbox{
-        margin: 0px auto;
-        text-align: center;
-        @include position(relative,200px,"","","");
-        .box{
-            margin: 0 1px;
-            vertical-align: top;
-            @include border(2px,solid,$main-color,10px);
-            @include layout(inline-block,29.5%,80px);
-            ul{
+    .p2{
+        @include pages;
+        text-align:center;
+        color:$color-white;
+        .contentbox{
+            .content{
+                //@include layout(block,60%,"");
+                //@include position(relative,180px,"","","");
+                @include border(2px,solid,$main-color,10px);
+                margin:0px auto;
+                p{
+                    text-align: left;
+                    line-height: 24px;
+                    letter-spacing: 3px;
+                    padding: 10px;
+                }
+            }
+            .contenttitle{
                 margin: 0px auto;
-                width:80%;
-                padding: 5px 0;
+                text-align: center;
+                //@include position(relative,195px,"","","");
+                .title{
+                    margin: 0 1px;
+                    padding-top: 4px;
+                    @include border(2px,solid,$main-color,10px);
+                    @include layout(inline-block,29.5%,25px);
+                }
+                
+            }
+            .contenttext{
+                margin: 0px auto;
+                text-align: center;
+                //@include position(relative,200px,"","","");
+                .box{
+                    margin: 0 1px;
+                    vertical-align: top;
+                    @include border(2px,solid,$main-color,10px);
+                    @include layout(inline-block,29.5%,80px);
+                    ul{
+                        margin: 0px auto;
+                        width:50%;
+                        padding: 5px 0;
+                    }
+                }
+                
             }
         }
         
     }
-}
-.p3{
-    @include pages;
-    .project{
-        @include position(relative,calc(50vh - 200px),"","","");
-        @include border(2px,solid,$main-color,20px);
-        @include layout(inline-block,450px,"");
-        img{
-            max-width: 450px;
-            max-height: 450px;
-            border-radius: 20px; 
-        }
-        span{
-            color: $color-white;
+    .p3{
+        @include pages;
+        .project{
+            @include position(relative,calc(50vh - 200px),"","","");
+            @include border(2px,solid,$main-color,20px);
+           // @include layout(inline-block,450px,"");
+            img{
+              //  max-width: 450px;
+              //  max-height: 450px;
+                border-radius: 20px; 
+            }
+            span{
+                color: $color-white;
+            }
         }
     }
-}
-.p4{
-    @include pages;
-    .box{
-        @include position(relative,calc(50vh - 50px),"","","");
-        .icon{
-            @include layout(inline-block,100px,100px);
-            
-            margin: 0 100px;
+    .p4{
+        @include pages;
+        .box{
+           // @include position(relative,calc(50vh - 50px),"","","");
+            .icon{
+           //    @include layout(inline-block,100px,100px);
+                
+           //     margin: 0 100px;
+                img{
+                    max-width: 100px;
+                    max-height: 100px;
+                    border-radius: 20px;
+                    transition: all 0.6s;
+                }
+                img:hover {
+                    transform: scale(1.4);
+                }
+            }
+        }
+        .QRcode{
+            @include layout(inline-block,225px,225px);
+           // @include position(relative,calc(50vh - 225px),"","","");
+            display: none;
+            margin: 0 auto;
             img{
-                max-width: 100px;
-                max-height: 100px;
                 border-radius: 20px;
                 transition: all 0.6s;
             }
-            img:hover {
-                transform: scale(1.4);
-            }
         }
+        
     }
-    .QRcode{
-        @include layout(inline-block,225px,225px);
-        @include position(relative,calc(50vh - 225px),"","","");
-        display: none;
-        margin: 0 auto;
-        img{
-            border-radius: 20px;
-            transition: all 0.6s;
-        }
-    }
-    
 }
