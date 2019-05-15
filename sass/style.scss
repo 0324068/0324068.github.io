@@ -383,7 +383,7 @@ $color-white:white;
                     margin: 0 1px;
                     vertical-align: top;
                     @include border(2px,solid,$main-color,10px);
-                    @include layout(inline-block,29.5%,80px);
+                    @include layout(inline-block,29.5%,85px);
                     ul{
                         margin: 0px auto;
                         width:50%;
